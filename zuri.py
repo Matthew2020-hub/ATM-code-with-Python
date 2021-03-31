@@ -11,34 +11,31 @@ if (name in allowedUsers):
     Password= input ("What's your password \n")
     userId = allowedUsers.index(name)
 
-try:
+    if (Password == allowedPassword[userId]):
 
-if (Password == allowedPassword[userId]):
+        print(f'Welcome home {name}')
+        print('These are the available options: ')
+        print('1. Withdrawal')
+        print('2. Cash Deposit')
+        print('3. Complaint')
 
-    print(f'Welcome home {name}')
-    print('These are the available options: ')
-    print('1. Withdrawal')
-    print('2. Cash Deposit')
-    print('3. Complaint')
+        selectedoption = int(input('Please select an option: '))
+        deposit = 250
+        deposit1 = deposit + int(input() )
 
-selectedoption = int(input('Please select an option: '))
+        if (selectedoption == 1):
+             withdrawal= int(input ('How much would you like to withdraw \n'))
+             print('Take your cash')
 
+        elif (selectedoption == 2):
+             deposit= int(input ('How much would you like to deposit \n'))
+             print(f'Current balance is {deposit1}')
 
-if(selectedoption == 1):
-    withdrawal= int(input ('How much would you like to withdraw \n'))
-    print('Take your cash')
+        else:
+             complaint= (input ('What issue will you like to report \n'))
 
-elif(selectedoption == 2):
-     deposit= int(input ('How much would you like to deposit \n'))
-    print(f'Current balance is {deposit}')
-
-else:
-    complaint= (input ('What issue will you like to report \n'))
-
-    print('Thank you for contactacting us')
-else:
-    print("Password incorrect, try again")
+             print('Thank you for contactacting us')
+    else:
+        print("Password incorrect, try again")
 else:
     print("Invalid name")
-except:
-        print("please enter digits not alphabets")
